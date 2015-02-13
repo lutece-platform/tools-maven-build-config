@@ -8,6 +8,7 @@
 These rules deal with different optimizations that generally apply to best practices.
   </description>
 
+<!-- Exclude for LUTECE
     <rule name="LocalVariableCouldBeFinal"
     	 since="2.2"
 	    message="Local variable ''{0}'' could be declared final"
@@ -50,7 +51,7 @@ public void foo2 (final String param) {	// better, do stuff with param never ass
   ]]>
       </example>
       </rule>
-
+-->
   <rule name="AvoidInstantiatingObjectsInLoops"
   		  since="2.2"
         message="Avoid instantiating new objects inside loops"

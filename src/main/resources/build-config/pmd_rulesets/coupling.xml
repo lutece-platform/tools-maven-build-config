@@ -117,6 +117,7 @@ public class Bar {
       </example>
     </rule>
 
+<!-- Exclude for LUTECE
    <rule name="LawOfDemeter"
         language="java"
         since="5.0"
@@ -159,6 +160,6 @@ public class Foo {
 ]]>
         </example>
     </rule>
-    
+-->    
 
  </ruleset>
