@@ -563,7 +563,7 @@ if (x == null) { 	// preferred
     ]]>
         </example>
         </rule>
-
+<!--
       <rule name="ConfusingTernary"
         since="1.9"
         message="Avoid if (x != y) ..; else ..;"
@@ -589,7 +589,7 @@ boolean bar(int x, int y) {
           ]]>
         </example>
       </rule>
-
+-->
     <rule name="InstantiationToGetClass"
    		language="java"
     		 since="2.0"
