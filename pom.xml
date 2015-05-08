@@ -11,20 +11,20 @@
     <build>
         <plugins>
             <plugin>
-              <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
-                          <configuration>
-                <providerImplementations>
-                  <git>jgit</git>
-                </providerImplementations>
-                          </configuration>
-              <dependencies>
-                <dependency>
-                  <groupId>org.apache.maven.scm</groupId>
-                  <artifactId>maven-scm-provider-jgit</artifactId>
-                  <version>1.9.2</version>
-                </dependency>
-              </dependencies>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <providerImplementations>
+                        <git>jgit</git>
+                    </providerImplementations>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-provider-jgit</artifactId>
+                        <version>1.9.2</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
@@ -34,8 +34,8 @@
         <connection>scm:git:https://github.com/lutece-platform/tools-maven-build-config.git</connection>
         <developerConnection>scm:git:https://github.com/lutece-platform/tools-maven-build-config.git</developerConnection>
         <url>https://github.com/lutece-platform/tools-maven-build-config.git</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     
     <distributionManagement>
         <repository>
@@ -49,5 +49,10 @@
             <url>http://dev.lutece.paris.fr/nexus/content/repositories/lutece_snapshots_repository</url>
         </snapshotRepository>
     </distributionManagement>
-    
+
+    <properties>
+        <jiraProjectName>BUILDCONF</jiraProjectName>
+        <jiraComponentId>12881</jiraComponentId>
+    </properties>
+        
 </project>

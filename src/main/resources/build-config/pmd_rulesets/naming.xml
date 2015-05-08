@@ -60,7 +60,7 @@ Fields, formal arguments, or local variable names that are too long can make the
     </description>
       <priority>3</priority>
       <properties>
-          <property name="minimum" type="Integer" description="The variable length reporting threshold" min="1" max="100" value="30"/>
+          <property name="minimum" type="Integer" description="The variable length reporting threshold" min="1" max="100" value="50"/>
           <property name="xpath">
               <value>
                   <![CDATA[
@@ -113,7 +113,7 @@ public class ShortMethod {
      </example>
   </rule>
 
-
+<!--
     <rule name="VariableNamingConventions"
     since="1.2"
     message="{0} variable {1} should begin with {2}"
@@ -135,7 +135,7 @@ public class Foo {
 ]]>
         </example>
     </rule>
-
+-->
     <rule name="MethodNamingConventions"
     			  since="1.2"
               message="Method name does not begin with a lower case character."

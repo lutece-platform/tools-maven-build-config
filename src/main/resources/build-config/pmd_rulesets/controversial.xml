@@ -70,7 +70,7 @@ public void bar() {
  ]]>
       </example>
     </rule>
-
+<!--
     <rule name="OnlyOneReturn"
         since="1.0"
          message="A method should have only one exit point, and that should be the last statement in the method"
@@ -114,7 +114,8 @@ public void bar() {
   ]]>
   </example>
 </rule>
-
+-->
+<!--
     <rule name="AtLeastOneConstructor"
        language="java"
       since="1.04"
@@ -151,7 +152,7 @@ public class Foo {
   ]]>
   </example>
 </rule>
-
+-->
     <rule name="DontImportSun"
        since="1.5"
        message="Avoid importing anything from the 'sun.*' packages"
@@ -324,7 +325,7 @@ b ^= true;	// fast
 ]]>
       </example>
     </rule>
-
+<!--
     <rule name="DataflowAnomalyAnalysis"
           since="3.9"
               message="Found ''{0}''-anomaly for variable ''{1}'' (lines ''{2}''-''{3}'')."
@@ -350,6 +351,7 @@ public void foo() {
 ]]>
           </example>
         </rule>
+-->
 
   <rule 	name="AvoidFinalLocalVariable"
        language="java"

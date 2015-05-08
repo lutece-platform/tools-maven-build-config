@@ -52,6 +52,7 @@ public void foo2 (final String param) {	// better, do stuff with param never ass
       </example>
       </rule>
 -->
+<!--
   <rule name="AvoidInstantiatingObjectsInLoops"
   		  since="2.2"
         message="Avoid instantiating new objects inside loops"
@@ -73,7 +74,7 @@ public class Something {
 ]]>
     </example>
   </rule>
-  
+-->  
     <rule name="UseArrayListInsteadOfVector"
    		language="java"
     		 since="3.0"

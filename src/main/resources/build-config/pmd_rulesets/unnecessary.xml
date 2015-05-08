@@ -207,7 +207,7 @@ public class Test {
 				]]>
 			</example>
 		</rule>
-
+<!--
   <rule name="UselessParentheses"
   		language="java"
         since="5.0"
@@ -274,5 +274,5 @@ public class Foo {
     ]]>
     </example>
   </rule>
-  
+-->  
 </ruleset>
