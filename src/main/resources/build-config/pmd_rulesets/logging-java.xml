@@ -139,7 +139,7 @@ class Foo {
 ]]>
            </example>
     </rule>
-
+<!--
    <rule name="GuardLogStatementJavaUtil"
          language="java"
          since="5.1.0"
@@ -159,4 +159,5 @@ otherwise skip the associate String creation and manipulation.
 ]]>
      </example>
    </rule>
+-->   
 </ruleset>
