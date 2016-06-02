@@ -34,7 +34,7 @@
 
     <!-- Checks whether files end with a new line.                        -->
     <!-- See http://checkstyle.sf.net/config_misc.html#NewlineAtEndOfFile -->
-   <!--  <module name="NewlineAtEndOfFile"/> -->
+    <!--  <module name="NewlineAtEndOfFile"/> -->
 
     <!-- Checks that property files contain the same keys.         -->
     <!-- See http://checkstyle.sf.net/config_misc.html#Translation -->
@@ -49,25 +49,25 @@
         <!-- ************************************************************** -->
         <property name="tabWidth" value="4"/>
         <module name="LeftCurly">
-          <property name="option" value="nl"/>
+            <property name="option" value="nl"/>
         </module>
         <module name="RightCurly">
-          <property name="option" value="alone"/>
+            <property name="option" value="alone"/>
         </module>
         <module name="MemberName">
-          <property name="format" value="^_[a-z](_?[a-zA-Z0-9])*$"/>
+            <property name="format" value="^_[a-z](_?[a-zA-Z0-9])*$"/>
         </module>
         <module name="StaticVariableName">
-          <property name="format" value="^_[a-z](_?[a-zA-Z0-9])*$"/>
+            <property name="format" value="^_[a-z](_?[a-zA-Z0-9])*$"/>
         </module>
         <module name="MethodName">
-          <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
         </module>
         <module name="ParameterName">
-          <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
         </module>
         <module name="LocalVariableName">
-          <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+            <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
         </module>
 
 
@@ -86,17 +86,17 @@
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
         <module name="ConstantName">
-          <property name="format" value="[A-Z0-9]*$"/>
+            <property name="format" value="[A-Z0-9]*$"/>
         </module>
 
         <module name="PackageName">
-          <property name="format" value="^fr\.paris\.[a-z][a-z0-9\.]*$"/>
+            <property name="format" value="^fr\.paris\.[a-z][a-z0-9\.]*$"/>
         </module>
 
         <module name="TypeName"/>
 
         <module name="LocalFinalVariableName">
-          <property name="format" value="[A-Z0-9]*$"/>
+            <property name="format" value="[A-Z0-9]*$"/>
         </module>
 
 
@@ -115,32 +115,32 @@
 
         <!-- Checks for Size Violations.                    -->
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
-      <!--  <module name="FileLength"/> -->
-      <!--  <module name="LineLength"/>    -->
-      <!--  <module name="MethodLength"/>     -->
-            <module name="ParameterNumber">
-                  <property name="severity" value="warning"/>
-            </module>
+        <!--  <module name="FileLength"/> -->
+        <!--  <module name="LineLength"/>    -->
+        <!--  <module name="MethodLength"/>     -->
+        <module name="ParameterNumber">
+            <property name="severity" value="warning"/>
+        </module>
 
 
 
         <!-- Checks for whitespace                               -->
         <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-      <!--  <module name="EmptyForIteratorPad"/> -->
-      <!--  <module name="NoWhitespaceAfter"/>  -->
-      <!--  <module name="NoWhitespaceBefore"/>  -->
-      <!--  <module name="OperatorWrap"/> -->
-            <module name="ParenPad">
-                    <property name="option" value="space"/>
-            </module>
+        <!--  <module name="EmptyForIteratorPad"/> -->
+        <!--  <module name="NoWhitespaceAfter"/>  -->
+        <!--  <module name="NoWhitespaceBefore"/>  -->
+        <!--  <module name="OperatorWrap"/> -->
+        <module name="ParenPad">
+            <property name="option" value="space"/>
+        </module>
 
-       <!-- <module name="TabCharacter"/> -->
-       <!-- <module name="WhitespaceAfter"/> -->
-       <!-- <module name="WhitespaceAround"/> -->
+        <!-- <module name="TabCharacter"/> -->
+        <!-- <module name="WhitespaceAfter"/> -->
+        <!-- <module name="WhitespaceAround"/> -->
 
-            <module name="WhitespaceAround">
-                    <property name="tokens" value="ASSIGN,EQUAL"/>
-            </module>
+        <module name="WhitespaceAround">
+            <property name="tokens" value="ASSIGN,EQUAL"/>
+        </module>
 
         <!-- Modifier Checks                                    -->
         <!-- See http://checkstyle.sf.net/config_modifiers.html -->
@@ -157,8 +157,8 @@
 
         <!-- Checks for common coding problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
-       <!-- <module name="AvoidInlineConditionals"/> -->
-    <!--    <module name="DoubleCheckedLocking"/>  -->
+        <!-- <module name="AvoidInlineConditionals"/> -->
+        <!--    <module name="DoubleCheckedLocking"/>  -->
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
         <module name="HiddenField"/>
@@ -181,7 +181,7 @@
         </module>
         <module name="PackageDeclaration"/>
         <module name="ParameterAssignment"/>
-<!--        <module name="RedundantThrows"/>  -->
+        <!--        <module name="RedundantThrows"/>  -->
         <module name="ReturnCount">
             <property name="max" value="5"/>
             <property name="severity" value="warning"/>
@@ -210,45 +210,45 @@
         
         <!-- <module name="FinalParameters"/> -->
         <module name="RegexpSinglelineJava">
-                <property name="format" value="System\.out\.println"/>
-          <!--  <property name="format" value="\s+$"/> -->
-          <!--  <property name="message" value="Line has trailing spaces."/> -->
+            <property name="format" value="System\.out\.println"/>
+            <!--  <property name="format" value="\s+$"/> -->
+            <!--  <property name="message" value="Line has trailing spaces."/> -->
         </module>
         
         <module name="RegexpSinglelineJava">
-                <property name="format" value="System\.exit"/>                
+            <property name="format" value="System\.exit"/>                
         </module>  		
-       <!-- <module name="TodoComment"/> -->
-       <!-- <module name="UpperEll"/> -->
+        <!-- <module name="TodoComment"/> -->
+        <!-- <module name="UpperEll"/> -->
 		
-		<module name="RegexpSinglelineJava">
-                <property name="format" value="[.]*\.printStackTrace"/>
-				<property name="message " value="Line matches the illegal pattern ''printStackTrace''."/>
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="[.]*\.printStackTrace"/>
+            <property name="message " value="Line matches the illegal pattern ''printStackTrace''."/>
         </module>
 		
-		<module name="RegexpSinglelineJava">
-                <property name="format" value="[.]*SELECT \*"/>
-				<property name="ignoreCase" value="true"/>
-				<property name="message " value="Line matches the illegal pattern ''SELECT *''."/>				
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="[.]*SELECT \*"/>
+            <property name="ignoreCase" value="true"/>
+            <property name="message " value="Line matches the illegal pattern ''SELECT *''."/>				
 				
         </module>
 				
-		<module name="RegexpSinglelineJava">
-                <property name="format" value="[.]*WHERE 1 "/>
-				<property name="ignoreCase" value="true"/>
-				<property name="message " value="Line matches the illegal pattern ''WHERE 1''."/>				
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="[.]*WHERE 1 "/>
+            <property name="ignoreCase" value="true"/>
+            <property name="message " value="Line matches the illegal pattern ''WHERE 1''."/>				
 				
         </module>
     </module>
     
     <!-- Checks for Headers                              -->
     <!-- See http://checkstyle.sf.net/config_header.html -->
+    
     <module name="Header">
-        <!-- The follow property value demonstrates the ability     -->
-        <!-- to have access to ANT properties. In this case it uses -->
-        <!-- the ${basedir} property to allow Checkstyle to be run  -->
-        <!-- from any directory within a project.                   -->
-        <property name="headerFile" value="${checkstyle.header.file}"/>
+  <!--       The follow property value demonstrates the ability    
+        to have access to ANT properties. In this case it uses 
+        the ${basedir} property to allow Checkstyle to be run  
+        from any directory within a project.         -->          
         <property name="fileExtensions" value="java"/>
     </module>
 
