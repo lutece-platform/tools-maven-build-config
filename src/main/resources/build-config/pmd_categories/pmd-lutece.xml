@@ -48,7 +48,12 @@ under the License.
     <rule ref="category/java/bestpractices.xml/DefaultLabelNotLastInSwitchStmt" /> <!-- By convention, the default label should be the last label in a switch statement. -->
     <rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach" /> <!-- Reports loops that can be safely replaced with the foreach syntax. The rule considers loops overl… -->
     <rule ref="category/java/bestpractices.xml/ForLoopVariableCount" /> <!-- Having a lot of control variables in a ‘for’ loop makes it harder to see what range of valuesthe … -->
-    <rule ref="category/java/bestpractices.xml/GuardLogStatement" /> <!-- Whenever using a log level, one should check if the loglevel is actually enabled, orotherwise ski… -->
+    <rule ref="category/java/bestpractices.xml/GuardLogStatement" > <!-- Whenever using a log level, one should check if the loglevel is actually enabled, orotherwise ski… -->
+        <properties>
+            <property name="logLevels" value="debug" />
+            <property name="guardsMethods" value="isDebugEnabled" />
+        </properties>
+    </rule>
     <rule ref="category/java/bestpractices.xml/JUnit4SuitesShouldUseSuiteAnnotation" /> <!-- In JUnit 3, test suites are indicated by the suite() method. In JUnit 4, suites are indicatedthro… -->
     <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseAfterAnnotation" /> <!-- In JUnit 3, the tearDown method was used to clean up all data entities required in running tests…. -->
     <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseBeforeAnnotation" /> <!-- In JUnit 3, the setUp method was used to set up all data entities required in running tests. JUni… -->
@@ -97,7 +102,11 @@ under the License.
     <rule ref="category/java/codestyle.xml/AvoidUsingNativeCode" /> <!-- Unnecessary reliance on Java Native Interface (JNI) calls directly reduces application portabilit…-->
     <rule ref="category/java/codestyle.xml/BooleanGetMethodName" /> <!-- Methods that return boolean results should be named as predicate statements to denote this.I.e, ‘…-->
     <rule ref="category/java/codestyle.xml/CallSuperInConstructor" /> <!-- It is a good practice to call super() in a constructor. If super() is not called butanother const…-->
-    <rule ref="category/java/codestyle.xml/ClassNamingConventions" /> <!-- Configurable naming conventions for type declarations. This rule reports type declarat…-->
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions" > <!-- Configurable naming conventions for type declarations. This rule reports type declarat…-->
+        <properties>
+            <property name="utilityClassPattern" value="[A-Z][a-zA-Z0-9]+(Utils?|Helper|Home|Service)" />
+        </properties>        
+    </rule>
     <rule ref="category/java/codestyle.xml/CommentDefaultAccessModifier" /> <!-- To avoid mistakes if we want that an Annotation, Class, Enum, Method, Constructor or Field have a…-->
     <rule ref="category/java/codestyle.xml/ConfusingTernary" /> <!-- Avoid negation within an "if" expression with an "else" clause. For example, rephrase" /> …-->
     <rule ref="category/java/codestyle.xml/ControlStatementBraces" /> <!-- Enforce a policy for braces on control statements. It is recommended to use braces on ‘if … els…-->
@@ -143,7 +152,7 @@ under the License.
     <rule ref="category/java/codestyle.xml/UnnecessaryModifier" /> <!-- Fields in interfaces and annotations are automatically ‘public static final’, and methods are ‘pu…-->
     <rule ref="category/java/codestyle.xml/UnnecessaryReturn" /> <!-- Avoid the use of unnecessary return statements.-->
     <rule ref="category/java/codestyle.xml/UseDiamondOperator" /> <!-- Use the diamond operator to let the type be inferred automatically. With the Diamond operator it …-->
-    <rule ref="category/java/codestyle.xml/UselessParentheses" /> <!-- Useless parentheses should be removed.-->
+    <!-- <rule ref="category/java/codestyle.xml/UselessParentheses" /> --> <!-- Useless parentheses should be removed.-->
     <rule ref="category/java/codestyle.xml/UselessQualifiedThis" /> <!-- Reports qualified this usages in the same class.-->
     <rule ref="category/java/codestyle.xml/UseUnderscoresInNumericLiterals" /> <!-- Since Java 1.7, numeric literals can use underscores to separate digits. This rule enforces that …-->
 
@@ -175,12 +184,9 @@ under the License.
     <rule ref="category/java/design.xml/ImmutableField" /> <!-- Identifies private fields whose values never change once object initialization ends either in the… -->
     <!-- <rule ref="category/java/design.xml/LawOfDemeter" /> --> <!-- The Law of Demeter is a simple rule, that says "only talk to friends". It helps to reduce couplin… -->
     <rule ref="category/java/design.xml/LogicInversion" /> <!-- Use opposite operator instead of negating the whole expression with a logic complement operator. -->
-    <rule ref="category/java/design.xml/LoosePackageCoupling" /> <!-- Avoid using classes from the configured package hierarchy outside of the package hierarchy, excep… -->
-    <rule ref="category/java/design.xml/ModifiedCyclomaticComplexity" /> <!-- Deprecated Complexity directly affects maintenance costs is determined by the number of decision points in a… -->
-    <rule ref="category/java/design.xml/NcssConstructorCount" /> <!-- Deprecated This rule uses the NCSS (Non-Commenting Source Statements) algorithm to determine the number of l… -->
+    <!-- <rule ref="category/java/design.xml/LoosePackageCoupling" /> --> <!-- Avoid using classes from the configured package hierarchy outside of the package hierarchy, excep… -->
+    <!-- <rule ref="category/java/design.xml/ModifiedCyclomaticComplexity" /> --><!-- Deprecated Complexity directly affects maintenance costs is determined by the number of decision points in a… -->
     <rule ref="category/java/design.xml/NcssCount" /> <!-- This rule uses the NCSS (Non-Commenting Source Statements) metric to determine the number of line… -->
-    <rule ref="category/java/design.xml/NcssMethodCount" /> <!-- Deprecated This rule uses the NCSS (Non-Commenting Source Statements) algorithm to determine the number of l… -->
-    <rule ref="category/java/design.xml/NcssTypeCount" /> <!-- Deprecated This rule uses the NCSS (Non-Commenting Source Statements) algorithm to determine the number of l… -->
     <rule ref="category/java/design.xml/NPathComplexity" /> <!-- The NPath complexity of a method is the number of acyclic execution paths through that method.Whi… -->
     <rule ref="category/java/design.xml/SignatureDeclareThrowsException" /> <!-- A method/constructor shouldn’t explicitly throw the generic java.lang.Exception, since itis uncle… -->
     <rule ref="category/java/design.xml/SimplifiedTernary" /> <!-- Look for ternary operators with the form ‘condition ? literalBoolean " /> -->
@@ -189,7 +195,6 @@ under the License.
     <rule ref="category/java/design.xml/SimplifyBooleanReturns" /> <!-- Avoid unnecessary if-then-else statements when returning a boolean. The result ofthe conditional … -->
     <rule ref="category/java/design.xml/SimplifyConditional" /> <!-- No need to check for null before an instanceof; the instanceof keyword returns false when given a… -->
     <rule ref="category/java/design.xml/SingularField" /> <!-- Fields whose scopes are limited to just single methods do not rely on the containingobject to pro… -->
-    <rule ref="category/java/design.xml/StdCyclomaticComplexity" /> <!-- Deprecated Complexity directly affects maintenance costs is determined by the number of decision points in a… -->
     <rule ref="category/java/design.xml/SwitchDensity" /> <!-- A high ratio of statements to labels in a switch statement implies that the switch statementis ov… -->
     <rule ref="category/java/design.xml/TooManyFields" /> <!-- Classes that have too many fields can become unwieldy and could be redesigned to have fewer field… -->
     <rule ref="category/java/design.xml/TooManyMethods" /> <!-- A class with too many methods is probably a good suspect for refactoring, in order to reduce itsc… -->
@@ -230,7 +235,7 @@ under the License.
     <rule ref="category/java/errorprone.xml/CloseResource" /> <!-- Ensure that resources (like ‘java.sql.Connection’, ‘java.sql.Statement’, and ‘java.sql.ResultSet’… -->
     <rule ref="category/java/errorprone.xml/CompareObjectsWithEquals" /> <!-- Use equals() to compare object references; avoid comparing them with ==. -->
     <rule ref="category/java/errorprone.xml/ConstructorCallsOverridableMethod" /> <!-- Calling overridable methods during construction poses a risk of invoking methods on an incomplete… -->
-    <rule ref="category/java/errorprone.xml/DataflowAnomalyAnalysis" /> <!-- The dataflow analysis tracks local definitions, undefinitions and references to variables on diff… -->
+    <!-- <rule ref="category/java/errorprone.xml/DataflowAnomalyAnalysis" /> --> <!-- The dataflow analysis tracks local definitions, undefinitions and references to variables on diff… -->
     <rule ref="category/java/errorprone.xml/DetachedTestCase" /> <!-- The method appears to be a test case since it has public or default visibility,non-static access,… -->
     <rule ref="category/java/errorprone.xml/DoNotCallGarbageCollectionExplicitly" /> <!-- Calls to System.gc(), Runtime.getRuntime().gc(), and System.runFinalization() are not advised. Co… -->
     <rule ref="category/java/errorprone.xml/DoNotCallSystemExit" /> <!-- Web applications should not call System.exit(), since only the web container or theapplication se… -->
@@ -318,7 +323,6 @@ under the License.
     <rule ref="category/java/multithreading.xml/DontCallThreadRun" /> <!-- Explicitly calling Thread.run() method will execute in the caller’s thread of control. Instead, …-->
     <rule ref="category/java/multithreading.xml/DoubleCheckedLocking" /> <!-- Partially created objects can be returned by the Double Checked Locking pattern when used in Java…-->
     <rule ref="category/java/multithreading.xml/NonThreadSafeSingleton" /> <!-- Non-thread safe singletons can result in bad state changes. Eliminatestatic singletons if possibl…-->
-    <rule ref="category/java/multithreading.xml/UnsynchronizedStaticDateFormatter" /> <!-- Deprecated SimpleDateFormat instances are not synchronized. Sun recommends using separate format instancesfo…-->
     <rule ref="category/java/multithreading.xml/UnsynchronizedStaticFormatter" /> <!-- Instances of ‘java.text.Format’ are generally not synchronized.Sun recommends using separate form…-->
     <rule ref="category/java/multithreading.xml/UseConcurrentHashMap" /> <!-- Since Java5 brought a new implementation of the Map designed for multi-threaded access, you canpe…-->
     <rule ref="category/java/multithreading.xml/UseNotifyAllInsteadOfNotify" /> <!-- Thread.notify() awakens a thread monitoring the object. If more than one thread is monitoring, th…-->
@@ -329,7 +333,7 @@ under the License.
     <rule ref="category/java/performance.xml/AppendCharacterWithChar" /> <!-- Avoid concatenating characters as strings in StringBuffer/StringBuilder.append methods. -->
     <rule ref="category/java/performance.xml/AvoidArrayLoops" /> <!-- Instead of manually copying data between two arrays, use the efficient Arrays.copyOf or System.ar… -->
     <rule ref="category/java/performance.xml/AvoidFileStream" /> <!-- The FileInputStream and FileOutputStream classes contains a finalizer method which will cause gar… -->
-    <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops" /> <!-- New objects created within loops should be checked to see if they can created outside them and re… -->
+    <!-- <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops" />--> <!-- New objects created within loops should be checked to see if they can created outside them and re… -->
     <rule ref="category/java/performance.xml/AvoidUsingShortType" /> <!-- Java uses the ‘short’ type to reduce memory usage, not to optimize calculation. In fact, the JVM … -->
     <rule ref="category/java/performance.xml/BigIntegerInstantiation" /> <!-- Don’t create instances of already existing BigInteger (BigInteger.ZERO, BigInteger.ONE) andfor Ja… -->
     <rule ref="category/java/performance.xml/BooleanInstantiation" /> <!-- Avoid instantiating Boolean objects; you can reference Boolean.TRUE, Boolean.FALSE, or call Boole… -->
