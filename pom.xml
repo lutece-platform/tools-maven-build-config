@@ -5,7 +5,7 @@
     <artifactId>build-config</artifactId>
     <name>Lutece build tools configuration files</name>
     <packaging>jar</packaging>
-    <version>1.2.1</version>
+    <version>1.2.2-SNAPSHOT</version>
 
     <build>
         <plugins>
@@ -33,7 +33,7 @@
         <connection>scm:git:https://github.com/lutece-platform/tools-maven-build-config.git</connection>
         <developerConnection>scm:git:https://github.com/lutece-platform/tools-maven-build-config.git</developerConnection>
         <url>https://github.com/lutece-platform/tools-maven-build-config.git</url>
-        <tag>build-config-1.2.1</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <distributionManagement>
