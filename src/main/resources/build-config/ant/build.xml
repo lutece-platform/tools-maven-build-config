@@ -5,7 +5,6 @@
         <attribute name="sql.url" />
         <attribute name="sql.userid" />
         <attribute name="sql.password" />
-        <attribute name="sql.connector.path" />
         <attribute name="sql.fileset.refid"/>
         <sequential>
             <!--echo message="sql.driver : @{sql.driver}" />
@@ -41,11 +40,15 @@
                  userid="@{sql.userid}"
                  password="@{sql.password}"
                  autocommit="true"
-                 classpath="@{sql.connector.path}"
                  onerror="${on_sql_error}"
                  encoding="${db.encoding}"
             >
                 <fileset file="${temp.sql}"/>
+                <classpath>
+                    <fileset dir="../lib">
+                        <include name="*.jar"/>
+                    </fileset>
+                </classpath>
             </sql>
             <delete file="${temp.sql}" verbose="true" />
         </sequential>
@@ -103,9 +106,6 @@
     <target name="init_mysql" if="mysql">
         <echo message="=> MySQL" />
 
-        <!-- Path to the jar that contain database connector driver -->
-        <property name="db.connector.path" value="${mysql.connector.jar.path}" />
-
         <!-- Define the baseUrl and baseName (drop and create DB) -->
         <property file="${db.properties.path}" />
         <propertyregex property="baseUrl"
@@ -125,9 +125,6 @@
 
     <target name="init_oracle" if="oracle">
         <echo message="=> Oracle" />
-
-        <!-- Path to the jar that contain database connector driver -->
-        <property name="db.connector.path" value="${oracle.connector.jar.path}" />
 
         <!-- Define the baseUrl and baseName (drop and create DB) -->
         <property file="${db.properties.path}" />
@@ -149,9 +146,6 @@
     <target name="init_hsqldb" if="hsqldb">
         <echo message="=> HSQLDB" />
 
-        <!-- Path to the jar that contain database connector driver -->
-        <property name="db.connector.path" value="${hsqldb.connector.jar.path}" />
-
         <!-- Define the baseUrl and baseName (drop and create DB) -->
         <property file="${db.properties.path}" />
         <property name="baseUrl" value="${portal.url}" />
@@ -165,9 +159,6 @@
 
     <target name="init_postgresql" if="postgresql">
         <echo message="=> POSTGRESQL" />
-
-        <!-- Path to the jar that contain database connector driver -->
-        <property name="db.connector.path" value="${postgresql.connector.jar.path}" />
 
         <!-- Define the baseUrl and baseName (drop and create DB) -->
         <property file="${db.properties.path}" />
@@ -234,7 +225,6 @@
                 sql.url="${baseUrl}"
                 sql.userid="${portal.user}"
                 sql.password="${portal.password}"
-                sql.connector.path="${db.connector.path}"
                 sql.fileset.refid="sql.db.create" />
 
         <delete file="${dbms}.sql" verbose="true" />
@@ -254,7 +244,6 @@
                 sql.url="${portal.url}"
                 sql.userid="${portal.user}"
                 sql.password="${portal.password}"
-                sql.connector.path="${db.connector.path}"
                 sql.fileset.refid="sql.core.files"/>
     </target>
 
