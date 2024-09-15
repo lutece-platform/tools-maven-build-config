@@ -14,7 +14,6 @@
                 sql.url="${portal.url}"
                 sql.userid="${portal.user}"
                 sql.password="${portal.password}"
-                sql.connector.path="${db.connector.path}"
                 sql.fileset.refid="sql.plugin.files" />
     </target>
 </project>
