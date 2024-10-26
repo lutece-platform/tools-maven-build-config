@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<server description="lutece server">
+    <!--The Liberty Maven Plugin has generated Liberty features necessary for your application in configDropins/overrides/generated-features.xml-->
+    <featureManager>
+        <feature>persistence-3.1</feature>
+        <feature>beanValidation-3.0</feature>
+        <feature>jndi-1.0</feature>
+        <feature>jdbc-4.2</feature>
+        <feature>localConnector-1.0</feature>
+        <feature>cdi-4.0</feature>
+        <feature>servlet-6.0</feature>
+        <feature>pages-3.1</feature>
+        <feature>mpConfig-3.1</feature>
+        <feature>mail-2.1</feature>
+        <feature>xmlBinding-4.0</feature>
+        <feature>concurrent-3.0</feature>
+         <!-- 
+        <feature>mpTelemetry-2.0</feature>
+        <feature>mpHealth-4.0</feature>
+        <feature>sessionDatabase-1.0</feature>
+        -->
+          <!-- tag::sessionCache[]   
+        <feature>sessionCache-1.0</feature> 
+      -->
+        <!-- end::sessionCache[] 
+        <feature>restfulWS-3.1</feature>
+        <feature>jsonb-3.0</feature>
+        <feature>jsonp-2.1</feature>
+        <feature>mpOpenAPI-4.0</feature>  
+		-->
+     </featureManager>
+        <!-- end::httpEndpoint[]   --> 
+        <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+    <httpEndpoint id="defaultHttpEndpoint"
+                  httpPort="9080"
+                  httpsPort="9443" />
+    <!-- Automatically expand WAR files and EAR files 
+    <applicationManager autoExpand="true"/>
+	-->
+    <!-- Default SSL configuration enables trust for default certificates from the Java runtime --> 
+    <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+	 
+</server>
