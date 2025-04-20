@@ -62,7 +62,6 @@
                                 sql.url="${@{pool}.url}"
                                 sql.userid="${@{pool}.user}"
                                 sql.password="${@{spool}.password}"
-                                sql.classpath="${db.connector.path}"
                                 sql.fileset.refid="sql.plugin.files"
                         />
                     </then>
@@ -78,7 +77,6 @@
                                 sql.url="${portal.url}"
                                 sql.userid="${portal.user}"
                                 sql.password="${portal.password}"
-                                sql.connector.path="${db.connector.path}"
                                 sql.fileset.refid="sql.plugin.files"/>
                     </else>
                 </if>
