@@ -45,7 +45,7 @@ under the License.
     <rule ref="category/java/bestpractices.xml/AvoidUsingHardCodedIP" /> <!-- Application with hard-coded IP addresses can become impossible to deploy in some cases.Externaliz… -->
     <rule ref="category/java/bestpractices.xml/CheckResultSet" /> <!-- Always check the return values of navigation methods (next, previous, first, last) of a ResultSet… -->
     <rule ref="category/java/bestpractices.xml/ConstantsInInterface" /> <!-- Avoid constants in interfaces. Interfaces should define types, constants are implementation detai… -->
-    <rule ref="category/java/bestpractices.xml/DefaultLabelNotLastInSwitchStmt" /> <!-- By convention, the default label should be the last label in a switch statement. -->
+    <rule ref="category/java/bestpractices.xml/DefaultLabelNotLastInSwitch" /> <!-- By convention, the default label should be the last label in a switch statement. -->
     <rule ref="category/java/bestpractices.xml/ForLoopCanBeForeach" /> <!-- Reports loops that can be safely replaced with the foreach syntax. The rule considers loops overl… -->
     <rule ref="category/java/bestpractices.xml/ForLoopVariableCount" /> <!-- Having a lot of control variables in a ‘for’ loop makes it harder to see what range of valuesthe … -->
     <rule ref="category/java/bestpractices.xml/GuardLogStatement" > <!-- Whenever using a log level, one should check if the loglevel is actually enabled, orotherwise ski… -->
@@ -55,34 +55,30 @@ under the License.
         </properties>
     </rule>
     <rule ref="category/java/bestpractices.xml/JUnit4SuitesShouldUseSuiteAnnotation" /> <!-- In JUnit 3, test suites are indicated by the suite() method. In JUnit 4, suites are indicatedthro… -->
-    <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseAfterAnnotation" /> <!-- In JUnit 3, the tearDown method was used to clean up all data entities required in running tests…. -->
-    <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseBeforeAnnotation" /> <!-- In JUnit 3, the setUp method was used to set up all data entities required in running tests. JUni… -->
-    <rule ref="category/java/bestpractices.xml/JUnit4TestShouldUseTestAnnotation" /> <!-- In JUnit 3, the framework executed all methods which started with the word test as a unit test. I… -->
-    <rule ref="category/java/bestpractices.xml/JUnitAssertionsShouldIncludeMessage" /> <!-- JUnit assertions should include an informative message - i.e., use the three-argument version of  -->…
-    <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts" /> <!-- Unit tests should not contain too many asserts. Many asserts are indicative of a complex test, fo… -->
-    <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert" /> <!-- JUnit tests should include at least one assertion. This makes the tests more robust, and using a… -->
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldUseAfterAnnotation" /> <!-- In JUnit 3, the tearDown method was used to clean up all data entities required in running tests…. -->
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldUseBeforeAnnotation" /> <!-- In JUnit 3, the setUp method was used to set up all data entities required in running tests. JUni… -->
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldUseTestAnnotation" /> <!-- In JUnit 3, the framework executed all methods which started with the word test as a unit test. I… -->
+    <rule ref="category/java/bestpractices.xml/UnitTestAssertionsShouldIncludeMessage" /> <!-- JUnit assertions should include an informative message - i.e., use the three-argument version of  -->
+    <rule ref="category/java/bestpractices.xml/UnitTestContainsTooManyAsserts" /> <!-- Unit tests should not contain too many asserts. Many asserts are indicative of a complex test, fo… -->
+    <rule ref="category/java/bestpractices.xml/UnitTestShouldIncludeAssert" /> <!-- JUnit tests should include at least one assertion. This makes the tests more robust, and using a… -->
     <rule ref="category/java/bestpractices.xml/JUnitUseExpected" /> <!-- In JUnit4, use the @Test(expected) annotation to denote tests that should throw exceptions. -->
     <rule ref="category/java/bestpractices.xml/LooseCoupling" /> <!-- The use of implementation types (i.e., HashSet) as object references limits your ability to use a… -->
     <rule ref="category/java/bestpractices.xml/MethodReturnsInternalArray" /> <!-- Exposing internal arrays to the caller violates object encapsulation since elements can be remove… -->
     <rule ref="category/java/bestpractices.xml/MissingOverride" /> <!-- Annotating overridden methods with @Override ensures at compile time that the method r… -->
     <rule ref="category/java/bestpractices.xml/OneDeclarationPerLine" /> <!-- Java allows the use of several variables declaration of the same type on one line. However, itcan… -->
-    <rule ref="category/java/bestpractices.xml/PositionLiteralsFirstInCaseInsensitiveComparisons" /> <!-- Position literals first in comparisons, if the second argument is null then NullPointerExceptions… -->
-    <rule ref="category/java/bestpractices.xml/PositionLiteralsFirstInComparisons" /> <!-- Position literals first in comparisons, if the second argument is null then NullPointerExceptions… -->
+    <!-- PositionLiteralsFirstInCaseInsensitiveComparisons and PositionLiteralsFirstInComparisons removed in PMD 7.x -->
     <rule ref="category/java/bestpractices.xml/PreserveStackTrace" /> <!-- Throwing a new exception from a catch block without passing the original exception into thenew ex… -->
     <rule ref="category/java/bestpractices.xml/ReplaceEnumerationWithIterator" /> <!-- Consider replacing Enumeration usages with the newer java.util.Iterator -->
     <rule ref="category/java/bestpractices.xml/ReplaceHashtableWithMap" /> <!-- Consider replacing Hashtable usage with the newer java.util.Map if thread safety is not required. -->
     <rule ref="category/java/bestpractices.xml/ReplaceVectorWithList" /> <!-- Consider replacing Vector usages with the newer java.util.ArrayList if expensive thread-safe oper… -->
-    <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault" /> <!-- All switch statements should include a default option to catch any unspecified values. -->
+    <rule ref="category/java/bestpractices.xml/NonExhaustiveSwitch" /> <!-- All switch statements should include a default option to catch any unspecified values. -->
     <rule ref="category/java/bestpractices.xml/SystemPrintln" /> <!-- References to System.(out|err).print are usually intended for debugging purposes and can remain … -->
     <rule ref="category/java/bestpractices.xml/UnusedFormalParameter" /> <!-- Avoid passing parameters to methods or constructors without actually referencing them in the meth… -->
-    <rule ref="category/java/bestpractices.xml/UnusedImports" /> <!-- Avoid unused import statements to prevent unwanted dependencies.This rule will also find unused o… -->
+    <!-- UnusedImports removed in PMD 7.x (handled by compiler) -->
     <rule ref="category/java/bestpractices.xml/UnusedLocalVariable" /> <!-- Detects when a local variable is declared and/or assigned, but not used. -->
     <rule ref="category/java/bestpractices.xml/UnusedPrivateField" /> <!-- Detects when a private field is declared and/or assigned a value, but not used. -->
     <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod" /> <!-- Unused Private Method detects when a private method is declared but is unused. -->
-    <rule ref="category/java/bestpractices.xml/UseAssertEqualsInsteadOfAssertTrue" /> <!-- This rule detects JUnit assertions in object equality. These assertions should be made by more sp… -->
-    <rule ref="category/java/bestpractices.xml/UseAssertNullInsteadOfAssertTrue" /> <!-- This rule detects JUnit assertions in object references equality. These assertions should be made… -->
-    <rule ref="category/java/bestpractices.xml/UseAssertSameInsteadOfAssertTrue" /> <!-- This rule detects JUnit assertions in object references equality. These assertions should be made… -->
-    <rule ref="category/java/bestpractices.xml/UseAssertTrueInsteadOfAssertEquals" /> <!-- When asserting a value is the same as a literal or Boxed boolean, use assertTrue/assertFalse, ins… -->
+    <!-- UseAssertEqualsInsteadOfAssertTrue, UseAssertNullInsteadOfAssertTrue, UseAssertSameInsteadOfAssertTrue, UseAssertTrueInsteadOfAssertEquals removed in PMD 7.x -->
     <rule ref="category/java/bestpractices.xml/UseCollectionIsEmpty" /> <!-- The isEmpty() method on java.util.Collection is provided to determine if a collection has any ele… -->
     <rule ref="category/java/bestpractices.xml/UseTryWithResources" /> <!-- Java 7 introduced the try-with-resources statement. This statement ensures that each resource is … -->
     <rule ref="category/java/bestpractices.xml/UseVarargs" /> <!-- Java 5 introduced the varargs parameter declaration for methods and constructors. This syntactic… -->
@@ -110,9 +106,7 @@ under the License.
     <rule ref="category/java/codestyle.xml/CommentDefaultAccessModifier" /> <!-- To avoid mistakes if we want that an Annotation, Class, Enum, Method, Constructor or Field have a…-->
     <rule ref="category/java/codestyle.xml/ConfusingTernary" /> <!-- Avoid negation within an "if" expression with an "else" clause. For example, rephrase" /> …-->
     <rule ref="category/java/codestyle.xml/ControlStatementBraces" /> <!-- Enforce a policy for braces on control statements. It is recommended to use braces on ‘if … els…-->
-    <rule ref="category/java/codestyle.xml/DefaultPackage" /> <!-- Use explicit scoping instead of accidental usage of default package private level.The rule allows…-->
-    <rule ref="category/java/codestyle.xml/DontImportJavaLang" /> <!-- Avoid importing anything from the package ‘java.lang’. These classes are automatically imported …-->
-    <rule ref="category/java/codestyle.xml/DuplicateImports" /> <!-- Duplicate or overlapping import statements should be avoided.-->
+    <!-- DefaultPackage, DontImportJavaLang, DuplicateImports removed in PMD 7.x -->
     <rule ref="category/java/codestyle.xml/EmptyMethodInAbstractClassShouldBeAbstract" /> <!-- Empty or auto-generated methods in an abstract class should be tagged as abstract. This helps to …-->
     <rule ref="category/java/codestyle.xml/ExtendsObject" /> <!-- No need to explicitly extend Object.-->
     <rule ref="category/java/codestyle.xml/FieldDeclarationsShouldBeAtStartOfClass" /> <!-- Fields should be declared at the top of the class, before any method declarations, constructors, …-->
@@ -174,9 +168,8 @@ under the License.
     <rule ref="category/java/design.xml/DataClass" /> <!-- Data Classes are simple data holders, which reveal most of their state, andwithout complex functi… -->
     <rule ref="category/java/design.xml/DoNotExtendJavaLangError" /> <!-- Errors are system exceptions. Do not extend them. -->
     <rule ref="category/java/design.xml/ExceptionAsFlowControl" /> <!-- Using Exceptions as form of flow control is not recommended as they obscure true exceptions when … -->
-    <rule ref="category/java/design.xml/ExcessiveClassLength" /> <!-- Excessive class file lengths are usually indications that the class may be burdened with excessiv… -->
+    <!-- ExcessiveClassLength and ExcessiveMethodLength removed in PMD 7.x (use NcssCount instead) -->
     <rule ref="category/java/design.xml/ExcessiveImports" /> <!-- A high number of imports can indicate a high degree of coupling within an object. This rule count… -->
-    <rule ref="category/java/design.xml/ExcessiveMethodLength" /> <!-- When methods are excessively long this usually indicates that the method is doing more than itsna… -->
     <rule ref="category/java/design.xml/ExcessiveParameterList" /> <!-- Methods with numerous parameters are a challenge to maintain, especially if most of them share th… -->
     <rule ref="category/java/design.xml/ExcessivePublicCount" /> <!-- Classes with large numbers of public methods and attributes require disproportionate testing effo… -->
     <rule ref="category/java/design.xml/FinalFieldCouldBeStatic" /> <!-- If a final field is assigned to a compile-time constant, it could be made static, thus saving ove… -->
@@ -190,7 +183,7 @@ under the License.
     <rule ref="category/java/design.xml/NPathComplexity" /> <!-- The NPath complexity of a method is the number of acyclic execution paths through that method.Whi… -->
     <rule ref="category/java/design.xml/SignatureDeclareThrowsException" /> <!-- A method/constructor shouldn’t explicitly throw the generic java.lang.Exception, since itis uncle… -->
     <rule ref="category/java/design.xml/SimplifiedTernary" /> <!-- Look for ternary operators with the form ‘condition ? literalBoolean " /> -->
-    <rule ref="category/java/design.xml/SimplifyBooleanAssertion" /> <!-- Avoid negation in an assertTrue or assertFalse test.For example, rephrase" />  -->
+    <!-- SimplifyBooleanAssertion removed in PMD 7.x -->
     <rule ref="category/java/design.xml/SimplifyBooleanExpressions" /> <!-- Avoid unnecessary comparisons in boolean expressions, they serve no purpose and impacts readability. -->
     <rule ref="category/java/design.xml/SimplifyBooleanReturns" /> <!-- Avoid unnecessary if-then-else statements when returning a boolean. The result ofthe conditional … -->
     <rule ref="category/java/design.xml/SimplifyConditional" /> <!-- No need to check for null before an instanceof; the instanceof keyword returns false when given a… -->
@@ -221,7 +214,7 @@ under the License.
     <rule ref="category/java/errorprone.xml/AvoidLosingExceptionInformation" /> <!-- Statements in a catch block that invoke accessors on the exception without using the informationo… -->
     <rule ref="category/java/errorprone.xml/AvoidMultipleUnaryOperators" /> <!-- The use of multiple unary operators may be problematic, and/or confusing.Ensure that the intended… -->
     <rule ref="category/java/errorprone.xml/AvoidUsingOctalValues" /> <!-- Integer literals should not start with zero since this denotes that the rest of literal will bein… -->
-    <rule ref="category/java/errorprone.xml/BadComparison" /> <!-- Avoid equality comparisons with Double.NaN. Due to the implicit lack of representationprecision w… -->
+    <!-- BadComparison removed in PMD 7.x -->
     <!-- <rule ref="category/java/errorprone.xml/BeanMembersShouldSerialize" /> --> <!-- If a class is a bean, or is referenced by a bean directly or indirectly it needs to be serializab… -->
     <rule ref="category/java/errorprone.xml/BrokenNullCheck" /> <!-- The null check is broken since it will throw a NullPointerException itself.It is likely that you … -->
     <rule ref="category/java/errorprone.xml/CallSuperFirst" /> <!-- Super should be called at the start of the method -->
@@ -231,14 +224,14 @@ under the License.
     <rule ref="category/java/errorprone.xml/CloneMethodMustBePublic" /> <!-- The java Manual says "By convention, classes that implement this interface should overrideObject…. -->
     <rule ref="category/java/errorprone.xml/CloneMethodMustImplementCloneable" /> <!-- The method clone() should only be implemented if the class implements the Cloneable interface wit… -->
     <rule ref="category/java/errorprone.xml/CloneMethodReturnTypeMustMatchClassName" /> <!-- If a class implements cloneable the return type of the method clone() must be the class name. Tha… -->
-    <rule ref="category/java/errorprone.xml/CloneThrowsCloneNotSupportedException" /> <!-- The method clone() should throw a CloneNotSupportedException. -->
+    <!-- CloneThrowsCloneNotSupportedException removed in PMD 7.x -->
     <rule ref="category/java/errorprone.xml/CloseResource" /> <!-- Ensure that resources (like ‘java.sql.Connection’, ‘java.sql.Statement’, and ‘java.sql.ResultSet’… -->
     <rule ref="category/java/errorprone.xml/CompareObjectsWithEquals" /> <!-- Use equals() to compare object references; avoid comparing them with ==. -->
     <rule ref="category/java/errorprone.xml/ConstructorCallsOverridableMethod" /> <!-- Calling overridable methods during construction poses a risk of invoking methods on an incomplete… -->
     <!-- <rule ref="category/java/errorprone.xml/DataflowAnomalyAnalysis" /> --> <!-- The dataflow analysis tracks local definitions, undefinitions and references to variables on diff… -->
     <rule ref="category/java/errorprone.xml/DetachedTestCase" /> <!-- The method appears to be a test case since it has public or default visibility,non-static access,… -->
     <rule ref="category/java/errorprone.xml/DoNotCallGarbageCollectionExplicitly" /> <!-- Calls to System.gc(), Runtime.getRuntime().gc(), and System.runFinalization() are not advised. Co… -->
-    <rule ref="category/java/errorprone.xml/DoNotCallSystemExit" /> <!-- Web applications should not call System.exit(), since only the web container or theapplication se… -->
+    <!-- DoNotCallSystemExit removed in PMD 7.x -->
     <rule ref="category/java/errorprone.xml/DoNotExtendJavaLangThrowable" /> <!-- Extend Exception or RuntimeException instead of Throwable. -->
     <rule ref="category/java/errorprone.xml/DoNotHardCodeSDCard" /> <!-- Use Environment.getExternalStorageDirectory() instead of "/sdcard" -->
     <rule ref="category/java/errorprone.xml/DoNotThrowExceptionInFinally" /> <!-- Throwing exceptions within a ‘finally’ block is confusing since they may mask other exceptions or… -->
@@ -246,41 +239,34 @@ under the License.
     <rule ref="category/java/errorprone.xml/DontUseFloatTypeForLoopIndices" /> <!-- Don’t use floating point for loop indices. If you must use floating point, use doubleunless you’r… -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock" /> <!-- Empty Catch Block finds instances where an exception is caught, but nothing is done. In most cir… -->
     <rule ref="category/java/errorprone.xml/EmptyFinalizer" /> <!-- Empty finalize methods serve no purpose and should be removed. Note that Oracle has declared Obje… -->
-    <rule ref="category/java/errorprone.xml/EmptyFinallyBlock" /> <!-- Empty finally blocks serve no purpose and should be removed. -->
-    <rule ref="category/java/errorprone.xml/EmptyIfStmt" /> <!-- Empty If Statement finds instances where a condition is checked but nothing is done about it. -->
-    <rule ref="category/java/errorprone.xml/EmptyInitializer" /> <!-- Empty initializers serve no purpose and should be removed. -->
-    <rule ref="category/java/errorprone.xml/EmptyStatementBlock" /> <!-- Empty block statements serve no purpose and should be removed. -->
-    <rule ref="category/java/errorprone.xml/EmptyStatementNotInLoop" /> <!-- An empty statement (or a semicolon by itself) that is not used as the sole body of a ‘for’ or ‘wh… -->
-    <rule ref="category/java/errorprone.xml/EmptySwitchStatements" /> <!-- Empty switch statements serve no purpose and should be removed. -->
-    <rule ref="category/java/errorprone.xml/EmptySynchronizedBlock" /> <!-- Empty synchronized blocks serve no purpose and should be removed. -->
-    <rule ref="category/java/errorprone.xml/EmptyTryBlock" /> <!-- Avoid empty try blocks - what’s the point? -->
-    <rule ref="category/java/errorprone.xml/EmptyWhileStmt" /> <!-- Empty While Statement finds all instances where a while statement does nothing. If it is a timin… -->
+    <!-- EmptyFinallyBlock, EmptyIfStmt, EmptyInitializer, EmptyStatementBlock, EmptyStatementNotInLoop, EmptySwitchStatements, EmptySynchronizedBlock, EmptyTryBlock, EmptyWhileStmt removed in PMD 7.x (consolidated into EmptyControlStatement) -->
+    <rule ref="category/java/codestyle.xml/EmptyControlStatement" /> <!-- Replaces the removed Empty*Block/Stmt rules -->
     <rule ref="category/java/errorprone.xml/EqualsNull" /> <!-- Tests for null should not use the equals() method. The ‘==’ operator should be used instead. -->
     <rule ref="category/java/errorprone.xml/FinalizeDoesNotCallSuperFinalize" /> <!-- If the finalize() is implemented, its last action should be to call super.finalize. Note that Ora… -->
     <rule ref="category/java/errorprone.xml/FinalizeOnlyCallsSuperFinalize" /> <!-- If the finalize() is implemented, it should do something besides just calling super.finalize(). N… -->
     <rule ref="category/java/errorprone.xml/FinalizeOverloaded" /> <!-- Methods named finalize() should not have parameters. It is confusing and most likely an attempt … -->
     <rule ref="category/java/errorprone.xml/FinalizeShouldBeProtected" /> <!-- When overriding the finalize(), the new method should be set as protected. If made public, other… -->
     <rule ref="category/java/errorprone.xml/IdempotentOperations" /> <!-- Avoid idempotent operations - they have no effect. -->
-    <rule ref="category/java/errorprone.xml/ImportFromSamePackage" /> <!-- There is no need to import a type that lives in the same package. -->
+    <!-- ImportFromSamePackage removed in PMD 7.x -->
     <rule ref="category/java/errorprone.xml/InstantiationToGetClass" /> <!-- Avoid instantiating an object just to call getClass() on it; use the .class public member instead. -->
-    <rule ref="category/java/errorprone.xml/InvalidSlf4jMessageFormat" /> <!-- Check for messages in slf4j loggers with non matching number of arguments and placeholders. -->
+    <!-- InvalidSlf4jMessageFormat removed in PMD 7.x -->
     <rule ref="category/java/errorprone.xml/JumbledIncrementer" /> <!-- Avoid jumbled loop incrementers - its usually a mistake, and is confusing even if intentional. -->
     <rule ref="category/java/errorprone.xml/JUnitSpelling" /> <!-- Some JUnit framework methods are easy to misspell. -->
     <rule ref="category/java/errorprone.xml/JUnitStaticSuite" /> <!-- The suite() method in a JUnit test needs to be both public and static. -->
-    <rule ref="category/java/errorprone.xml/LoggerIsNotStaticFinal" /> <!-- Deprecated In most cases, the Logger reference can be declared as static and final.This rule is deprecated a… -->
+    <!-- LoggerIsNotStaticFinal removed in PMD 7.x -->
     <rule ref="category/java/errorprone.xml/MethodWithSameNameAsEnclosingClass" /> <!-- Non-constructor methods should not have the same name as the enclosing class. -->
     <rule ref="category/java/errorprone.xml/MisplacedNullCheck" /> <!-- The null check here is misplaced. If the variable is null a NullPointerException will be thrown.E… -->
-    <rule ref="category/java/errorprone.xml/MissingBreakInSwitch" /> <!-- Switch statements without break or return statements for each case optionmay indicate problematic… -->
+    <!-- MissingBreakInSwitch removed in PMD 7.x -->
     <rule ref="category/java/errorprone.xml/MissingSerialVersionUID" /> <!-- Serializable classes should provide a serialVersionUID field.The serialVersionUID field is also n… -->
     <rule ref="category/java/errorprone.xml/MissingStaticMethodInNonInstantiatableClass" /> <!-- A class that has private constructors and does not have any static methods or fields cannot be us… -->
     <rule ref="category/java/errorprone.xml/MoreThanOneLogger" /> <!-- Normally only one logger is used in each class. -->
-    <rule ref="category/java/errorprone.xml/NonCaseLabelInSwitchStatement" /> <!-- A non-case label (e.g. a named break/continue label) was present in a switch statement.This legal… -->
+    <rule ref="category/java/errorprone.xml/NonCaseLabelInSwitch" /> <!-- A non-case label (e.g. a named break/continue label) was present in a switch statement.This legal… -->
     <rule ref="category/java/errorprone.xml/NonStaticInitializer" /> <!-- A non-static initializer block will be called any time a constructor is invoked (just prior toinv… -->
     <rule ref="category/java/errorprone.xml/NullAssignment" /> <!-- Assigning a "null" to a variable (outside of its declaration) is usually bad form. Sometimes, th… -->
     <rule ref="category/java/errorprone.xml/OverrideBothEqualsAndHashcode" /> <!-- Override both public boolean Object.equals(Object other), and public int Object.hashCode(), or ov… -->
     <rule ref="category/java/errorprone.xml/ProperCloneImplementation" /> <!-- Object clone() should be implemented with super.clone(). -->
     <rule ref="category/java/errorprone.xml/ProperLogger" /> <!-- A logger should normally be defined private static final and be associated with the correct class… -->
-    <rule ref="category/java/errorprone.xml/ReturnEmptyArrayRatherThanNull" /> <!-- For any method that returns an array, it is a better to return an empty array rather than anull r… -->
+    <rule ref="category/java/errorprone.xml/ReturnEmptyCollectionRatherThanNull" /> <!-- For any method that returns a collection or array, it is a better to return an empty one rather than null -->
     <rule ref="category/java/errorprone.xml/ReturnFromFinallyBlock" /> <!-- Avoid returning from a finally block, this can discard exceptions. -->
     <rule ref="category/java/errorprone.xml/SimpleDateFormatNeedsLocale" /> <!-- Be sure to specify a Locale when creating SimpleDateFormat instances to ensure that locale-approp… -->
     <rule ref="category/java/errorprone.xml/SingleMethodSingleton" /> <!-- Some classes contain overloaded getInstance. The problem with overloaded getInstance methodsis th… -->
@@ -334,25 +320,21 @@ under the License.
     <rule ref="category/java/performance.xml/AvoidArrayLoops" /> <!-- Instead of manually copying data between two arrays, use the efficient Arrays.copyOf or System.ar… -->
     <rule ref="category/java/performance.xml/AvoidFileStream" /> <!-- The FileInputStream and FileOutputStream classes contains a finalizer method which will cause gar… -->
     <!-- <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops" />--> <!-- New objects created within loops should be checked to see if they can created outside them and re… -->
-    <rule ref="category/java/performance.xml/AvoidUsingShortType" /> <!-- Java uses the ‘short’ type to reduce memory usage, not to optimize calculation. In fact, the JVM … -->
+    <!-- AvoidUsingShortType, BooleanInstantiation, ByteInstantiation removed in PMD 7.x -->
     <rule ref="category/java/performance.xml/BigIntegerInstantiation" /> <!-- Don’t create instances of already existing BigInteger (BigInteger.ZERO, BigInteger.ONE) andfor Ja… -->
-    <rule ref="category/java/performance.xml/BooleanInstantiation" /> <!-- Avoid instantiating Boolean objects; you can reference Boolean.TRUE, Boolean.FALSE, or call Boole… -->
-    <rule ref="category/java/performance.xml/ByteInstantiation" /> <!-- Calling new Byte() causes memory allocation that can be avoided by the static Byte.valueOf().It m… -->
     <rule ref="category/java/performance.xml/ConsecutiveAppendsShouldReuse" /> <!-- Consecutive calls to StringBuffer/StringBuilder .append should be chained, reusing the target obj… -->
     <rule ref="category/java/performance.xml/ConsecutiveLiteralAppends" /> <!-- Consecutively calling StringBuffer/StringBuilder.append(…) with literals should be avoided.Sinc… -->
     <rule ref="category/java/performance.xml/InefficientEmptyStringCheck" /> <!-- String.trim().length() == 0 (or String.trim().isEmpty() for the same reason) is an inefficientway… -->
     <rule ref="category/java/performance.xml/InefficientStringBuffering" /> <!-- Avoid concatenating non-literals in a StringBuffer constructor or append() since intermediate buf… -->
     <rule ref="category/java/performance.xml/InsufficientStringBufferDeclaration" /> <!-- Failing to pre-size a StringBuffer or StringBuilder properly could cause it to re-size many times… -->
-    <rule ref="category/java/performance.xml/IntegerInstantiation" /> <!-- Calling new Integer() causes memory allocation that can be avoided by the static Integer.valueOf(… -->
-    <rule ref="category/java/performance.xml/LongInstantiation" /> <!-- Calling new Long() causes memory allocation that can be avoided by the static Long.valueOf().It m… -->
+    <!-- IntegerInstantiation, LongInstantiation removed in PMD 7.x -->
     <rule ref="category/java/performance.xml/OptimizableToArrayCall" /> <!-- Calls to a collection’s ‘toArray(E[])’ method should specify a target array of zero size. This al… -->
     <rule ref="category/java/performance.xml/RedundantFieldInitializer" /> <!-- Java will initialize fields with known default values so any explicit initialization of those sam… -->
-    <rule ref="category/java/performance.xml/ShortInstantiation" /> <!-- Calling new Short() causes memory allocation that can be avoided by the static Short.valueOf().It… -->
-    <rule ref="category/java/performance.xml/SimplifyStartsWith" /> <!-- Since it passes in a literal of length 1, calls to (string).startsWith can be rewritten using (st… -->
+    <!-- ShortInstantiation, SimplifyStartsWith removed in PMD 7.x -->
     <rule ref="category/java/performance.xml/StringInstantiation" /> <!-- Avoid instantiating String objects; this is usually unnecessary since they are immutable and can … -->
     <rule ref="category/java/performance.xml/StringToString" /> <!-- Avoid calling toString() on objects already known to be string instances; this is unnecessary. -->
-    <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement" /> <!-- Switch statements are intended to be used to support complex branching behaviour. Using a switch … -->
-    <rule ref="category/java/performance.xml/UnnecessaryWrapperObjectCreation" /> <!-- Most wrapper classes provide static conversion methods that avoid the need to create intermediate… -->
+    <rule ref="category/java/performance.xml/TooFewBranchesForSwitch" /> <!-- Switch statements are intended to be used to support complex branching behaviour. Using a switch … -->
+    <!-- UnnecessaryWrapperObjectCreation removed in PMD 7.x -->
     <rule ref="category/java/performance.xml/UseArrayListInsteadOfVector" /> <!-- ArrayList is a much better Collection implementation than Vector if thread-safe operation is not … -->
     <rule ref="category/java/performance.xml/UseArraysAsList" /> <!-- The java.util.Arrays class has a "asList" method that should be used when you want to create a ne… -->
     <rule ref="category/java/performance.xml/UseIndexOfChar" /> <!-- Use String.indexOf(char) when checking for the index of a single character; it executes faster. -->
