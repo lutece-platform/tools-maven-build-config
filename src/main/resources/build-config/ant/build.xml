@@ -94,6 +94,11 @@
             <case value="oracle">
                 <property name="oracle" value="oracle" />
             </case>
+            <case value="mariadb">
+                <!-- MariaDB is wire-compatible with MySQL: reuse mysql.sql, init_session_mysql.sql and regexp.mysql.* -->
+                <var name="dbms" value="mysql" />
+                <property name="mysql" value="mysql" />
+            </case>
             <default>
                 <property name="mysql" value="mysql" />
             </default>
