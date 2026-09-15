@@ -7,6 +7,8 @@
     <target name="plugin_init_plugins_files" if="contrib.jar.present" depends="db_core_init_ep">
         <fileset id="sql.plugin.files" dir="${basedir}">
             <include name="plugins/**/plugin/*.sql" />
+            <!-- liquibase-only pre-execution mini changelogs (LUT-33326) : meaningless as raw SQL -->
+            <exclude name="plugins/**/plugin/prerun_db_*.sql" />
         </fileset>
         <pathconvert refid="sql.plugin.files" setonempty="false" property="exists.sql.plugin.files"/>
     </target>

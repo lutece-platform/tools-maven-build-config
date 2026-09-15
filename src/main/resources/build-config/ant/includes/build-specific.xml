@@ -12,6 +12,8 @@
             <path>
                 <fileset dir="${basedir}">
                     <include name="plugins/**/plugin/*.sql" />
+                    <!-- liquibase-only pre-execution mini changelogs (LUT-33326) : meaningless as raw SQL -->
+                    <exclude name="plugins/**/plugin/prerun_db_*.sql" />
                 </fileset>
             </path>
             <sequential>
@@ -32,12 +34,17 @@
         </for>
     </target>
 
-    <!-- create and init spesifics pools -->
+    <!-- create and init spesifics pools.
+         Limitation (LUT-33380) : one runsql call per plugin, in the alphabetical order of list_plugins. The runAfter
+         header directive (see build.xml, macro runsql) is therefore NOT applied between plugins by this target ; only the
+         "all" target, used by the maven builds, honours it. Applying it here would require sorting list_plugins with the
+         same rules, by a dedicated Ant task. -->
     <target name="db_plugins_specific_database_init" if="contrib.jar.present" depends="init_list_db_plugins_specific_database">
         <for list="${list_plugins}" delimiter="," param="pool">
             <sequential>
                 <fileset id="sql.plugin.files" dir="${basedir}">
                     <include name="plugins/**/@{pool}/plugin/*.sql" />
+                    <exclude name="plugins/**/plugin/prerun_db_*.sql" />
                 </fileset>
                 <pathconvert refid="sql.plugin.files" setonempty="false" property="exists.sql.plugin.files"/>
 
