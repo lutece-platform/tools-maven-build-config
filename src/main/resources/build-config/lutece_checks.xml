@@ -78,8 +78,12 @@
 
         <!-- Checks for Javadoc comments.                     -->
         <!-- See http://checkstyle.sf.net/config_javadoc.html -->
-        <module name="JavadocMethod"/>
-        <module name="JavadocType"/>
+        <module name="MissingJavadocMethod">
+            <property name="severity" value="warning"/>
+        </module>
+        <module name="MissingJavadocType">
+            <property name="severity" value="warning"/>
+        </module>
         <!-- <module name="JavadocVariable"/> -->
 
 
