@@ -38,7 +38,7 @@
         <for list="${list_plugins}" delimiter="," param="pool">
             <sequential>
                 <fileset id="sql.plugin.files" dir="${basedir}">
-                    <include name="plugins/**/@{pool}/plugin/*.sql" />
+                    <include name="plugins/**/@{pool}/upgrade/*.sql" />
                 </fileset>
                 <pathconvert refid="sql.plugin.files" setonempty="false" property="exists.sql.plugin.files"/>
 
@@ -61,7 +61,7 @@
                         <runsql sql.driver="${@{pool}.driver}"
                                 sql.url="${@{pool}.url}"
                                 sql.userid="${@{pool}.user}"
-                                sql.password="${@{spool}.password}"
+                                sql.password="${@{pool}.password}"
                                 sql.fileset.refid="sql.plugin.files"
                         />
                     </then>
