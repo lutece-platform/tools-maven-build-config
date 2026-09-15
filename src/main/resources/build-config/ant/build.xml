@@ -14,15 +14,35 @@
             <echo message="sql.connector.path : @{sql.connector.path}" /-->
             <!-- Concatenate all sql files into one -->
             <var name="log_pathconvert" value="" unset="true"/>
-            <pathconvert property="log_pathconvert" pathsep="${line.separator}" refid="@{sql.fileset.refid}">
-                <map from="${basedir}/" to="    "></map>
-            </pathconvert>
-            <echo message="Creating sql resource from the following files:${line.separator}${log_pathconvert}"/>
             <tempfile property="temp.sql" prefix="tmp_" />
-            <concat destfile="${temp.sql}" fixlastline="true">
-                <fileset file="init_db/init_session_${dbms}.sql" />
-                <fileset refid="@{sql.fileset.refid}"/>
-            </concat>
+            <if>
+                <istrue value="${runafter.available}"/>
+                <then>
+                    <!-- runAfter ordering (LUT-33380) : the same order as the liquibase startup -->
+                    <sort id="sql.sorted">
+                        <fileset refid="@{sql.fileset.refid}"/>
+                        <runafter dir="${basedir}"/>
+                    </sort>
+                    <pathconvert property="log_pathconvert" pathsep="${line.separator}" refid="sql.sorted">
+                        <map from="${basedir}/" to="    "></map>
+                    </pathconvert>
+                    <echo message="Creating sql resource from the following files (runAfter order):${line.separator}${log_pathconvert}"/>
+                    <concat destfile="${temp.sql}" fixlastline="true">
+                        <fileset file="init_db/init_session_${dbms}.sql" />
+                        <sort refid="sql.sorted"/>
+                    </concat>
+                </then>
+                <else>
+                    <pathconvert property="log_pathconvert" pathsep="${line.separator}" refid="@{sql.fileset.refid}">
+                        <map from="${basedir}/" to="    "></map>
+                    </pathconvert>
+                    <echo message="Creating sql resource from the following files:${line.separator}${log_pathconvert}"/>
+                    <concat destfile="${temp.sql}" fixlastline="true">
+                        <fileset file="init_db/init_session_${dbms}.sql" />
+                        <fileset refid="@{sql.fileset.refid}"/>
+                    </concat>
+                </else>
+            </if>
             <echo message="Translating SQL files to fit ${dbms} requirements"/>
             <propertycopy name="regexp.list" from="regexp.${dbms}.list" override="true"/>
             <for list="${regexp.list}" delimiter="," param="index">
@@ -87,6 +107,20 @@
                        regexp="jdbc:(.*?):.*"
                        select="\1"
                        casesensitive="false" /-->
+        <!-- runAfter ordering of SQL scripts (LUT-33380) : comparator provided by library-sql-utils.
+             Under maven-antrun-plugin the class comes from the plugin classpath (lutece-global-pom
+             dependency) ; for a manual ant on a site, from ../lib. Absent : alphabetical order, as before. -->
+        <path id="runafter.classpath">
+            <fileset dir="../lib" includes="library-sql-utils-*.jar" erroronmissingdir="false"/>
+        </path>
+        <typedef name="runafter" onerror="report"
+                 classname="fr.paris.lutece.utils.sql.ant.RunAfterResourceComparator"
+                 classpathref="runafter.classpath"/>
+        <condition property="runafter.available" value="true" else="false">
+            <typefound name="runafter"/>
+        </condition>
+        <echo message="runAfter ordering of SQL scripts : ${runafter.available}"/>
+
         <switch value="${dbms}">
             <case value="hsqldb">
                 <property name="hsqldb" value="hsqldb" />
