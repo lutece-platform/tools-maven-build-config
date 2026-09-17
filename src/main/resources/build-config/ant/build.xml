@@ -99,12 +99,12 @@
                 <var name="dbms" value="mysql" />
                 <property name="mysql" value="mysql" />
             </case>
-            <default>
-                <property name="mysql" value="mysql" />
-            </default>
             <case value="postgresql">
                 <property name="postgresql" value="postgresql" />
             </case>
+            <default>
+                <property name="mysql" value="mysql" />
+            </default>
         </switch>
     </target>
 
@@ -182,19 +182,14 @@
         <property name="baseOwner" value="${portal.user}" />
     </target>
 
-    <!-- For import lib ant-contrib -->
-    <taskdef resource="net/sf/antcontrib/antlib.xml">
-        <classpath>
-            <pathelement location="ant-contrib/ant-contrib-1.0b3.jar"/>
-        </classpath>
-    </taskdef>
+    <!-- For import lib ant-contrib : resolved from the Ant classpath provided at
+         invocation time (Maven's ant-contrib plugin dependency when run via
+         maven-antrun-plugin, or -lib when run directly with the ant CLI) instead
+         of a jar committed in this repository. -->
+    <taskdef resource="net/sf/antcontrib/antlib.xml"/>
 
     <target name="check_contrib_present">
-        <available property="contrib.jar.present" resource="net/sf/antcontrib/antlib.xml">
-            <classpath >
-                <pathelement location="ant-contrib/ant-contrib-1.0b3.jar" />
-            </classpath>
-        </available>
+        <available property="contrib.jar.present" resource="net/sf/antcontrib/antlib.xml"/>
     </target>
 
     <target name="contrib_not_found" unless="contrib.jar.present" depends="check_contrib_present">
