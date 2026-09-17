@@ -182,10 +182,7 @@
         <property name="baseOwner" value="${portal.user}" />
     </target>
 
-    <!-- For import lib ant-contrib : resolved from the Ant classpath provided at
-         invocation time (Maven's ant-contrib plugin dependency when run via
-         maven-antrun-plugin, or -lib when run directly with the ant CLI) instead
-         of a jar committed in this repository. -->
+    <!-- For import lib ant-contrib -->
     <taskdef resource="net/sf/antcontrib/antlib.xml"/>
 
     <target name="check_contrib_present">
