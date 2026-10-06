@@ -6,7 +6,7 @@
     <name>Lutece build tools configuration files</name>
     <description>Common build configuration files (Ant scripts, code quality rulesets, packaging resources) shared by Lutece Maven projects</description>
     <packaging>jar</packaging>
-    <version>3.0.3-SNAPSHOT</version>
+    <version>3.0.3</version>
 
     <organization>
         <name>City of Paris</name>
@@ -55,7 +55,7 @@
         <connection>scm:git:https://github.com/lutece-platform/tools-maven-build-config.git</connection>
         <developerConnection>scm:git:https://github.com/lutece-platform/tools-maven-build-config.git</developerConnection>
         <url>https://github.com/lutece-platform/tools-maven-build-config.git</url>
-        <tag>HEAD</tag>
+        <tag>build-config-3.0.3</tag>
     </scm>
     
     <distributionManagement>
